@@ -5,8 +5,8 @@ const Colors = {
     secondary: "#FE3C10",
     brown: "#D6C1BB",
     black: "#121114",
-    lightblack: "#4C515E",
-    deepash: "#878081",
+    textSecondary: "#4C515E",
+    textPrimary: "#747f96",
     titleColor: "#233352"
 }
 
