@@ -29,7 +29,7 @@ export default function SignUp({navigation}) {
         }}>Create an account.</Text>
         <TextInput placeholder="Name" style={styles.login_fields}/>
         <TextInput placeholder="Email" keyboardType="email-address" style={styles.login_fields}/>
-        <TextInput placeholder="Password" keyboardType="password" style={styles.login_fields} />
+        <TextInput placeholder="Password" secureTextEntry={true} style={styles.login_fields} />
         <TouchableOpacity style={{
             backgroundColor: Colors.primary, 
             paddingVertical: 12, 

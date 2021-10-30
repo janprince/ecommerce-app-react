@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, Feather, FontAwesome5 } from '@expo/vector-icons';
@@ -7,8 +7,8 @@ import Colors from "../utilities/Colors";
 
 
 
-export default function Home() {
-  const brands = ["Nike", "Puma", "Adidas", "New Balance"];
+export default function Home({navigation}) {
+  const [brand, setBrand] = useState("Nike");   // state to handle which brand's shoes are diplayed
   const pds = [
     require("../assets/product-images/test/pd-1.png"),
     require("../assets/product-images/test/pd-2.png"),
@@ -67,120 +67,8 @@ export default function Home() {
         </View>
       </View>
 
-      {/* shoe brands */}
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15, marginBottom: 5}}>
-        {
-          brands.map(brand => {
-            return(
-              <TouchableOpacity  key={brand} style={{
-                paddingHorizontal: 15,
-                paddingVertical: 10,
-                backgroundColor: '#fff',
-                borderRadius: 10,
-              }}>
-                <Text>{brand}</Text>
-              </TouchableOpacity>
-            );
-          })
-        }
-      </View>
-
-        
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{
-            flex: 1,
-            flexDirection: 'row',
-            marginTop: 12,
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-          }}>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-1.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <View style={{paddingLeft: 10}}>
-              <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-              <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-                <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-                <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-5.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-2.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-6.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-8.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-2.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-2.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-          <View style={styles.product}>
-            <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
-            <Image source={require("../assets/product-images/test/pd-3.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
-            <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
-            <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-              <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
-              <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
-            </View>
-          </View>
-
-        
-
-        </View>
-      </ScrollView>
+      {/* Product listings based on categories */}
+      <Products values={["Nike", "Puma", "Adidas", "New Balance"]} selectedBrand={brand} setSelectedBrand={setBrand} navigation={navigation}/>
 
     </SafeAreaView>
   );
@@ -207,5 +95,91 @@ const styles = StyleSheet.create({
     // shadowOpacity: 1.25,
     // shadowRadius: 0.84,
     elevation: 1,
+  },
+
+  brandButtons: {
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+  },
+  selectedBrandButton: {
+    backgroundColor: Colors.primary,
+  },
+  brandLabel: {
+    color: "black",
+  },
+  selectedBrandLabel: {
+    color: "#fff",
   }
 });
+
+
+const Products = ({
+  values,
+  selectedBrand,
+  setSelectedBrand,
+  navigation,
+}) => (
+  <View>
+
+    {/* shoe brands */}
+    <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15, marginBottom: 5}}>
+      {
+        values.map(value => {
+          return(
+            <TouchableOpacity  key={value} style={[styles.brandButtons, selectedBrand == value && styles.selectedBrandButton]} onPress={() => setSelectedBrand(value)}>
+              <Text style={[styles.brandLabel, selectedBrand == value && styles.selectedBrandLabel]}>{value}</Text>
+            </TouchableOpacity>
+          );
+        })
+      }
+    </View>
+
+    <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={{
+        flex: 1,
+        flexDirection: 'row',
+        marginTop: 12,
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+      }}>
+
+      <TouchableOpacity style={styles.product} onPress={() => {navigation.navigate('Product')}}>
+        <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
+        <Image source={require("../assets/product-images/test/pd-1.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
+        <View style={{paddingLeft: 10}}>
+          <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
+          <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+            <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
+            <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <View style={styles.product}>
+        <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
+        <Image source={require("../assets/product-images/test/pd-5.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
+        <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
+        <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+          <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
+          <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
+        </View>
+      </View>
+
+      <View style={styles.product}>
+        <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
+        <Image source={require("../assets/product-images/test/pd-2.png")} style={{width: 160, height: 85, marginBottom: 15}}/>
+        <Text style={{color: Colors.titleColor, fontSize: 14, fontWeight: 'bold'}}>Air Zoom Pegasus</Text>
+        <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+          <Text style={{color: Colors.textSecondary, fontSize: 14, fontWeight: 'bold' }}>$135</Text>
+          <Text style={{color: Colors.textSecondary, fontSize: 12, fontWeight: 'bold' }}>.00</Text>
+        </View>
+      </View>      
+
+    </View>
+  </ScrollView>
+
+</View>
+
+);
