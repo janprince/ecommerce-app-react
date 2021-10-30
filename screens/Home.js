@@ -26,14 +26,14 @@ export default function Home({navigation}) {
         marginTop: 10,
       }}>
         <View style={{flex: 1}}>
-          <Ionicons name="options" size={24} color="black" />
+          <Ionicons name="options" size={24} color={Colors.titleColor} />
         </View>
         <View style={{flex: 1}}>
-          <Ionicons name="notifications" size={24} color="black" style={{alignSelf: 'flex-end'}}/>
+          <Ionicons name="cart" size={24} color={Colors.titleColor} style={{alignSelf: 'flex-end'}}/>
         </View>
       </View>
 
-      <View style={{marginVertical: 15,}}>
+      <View style={{marginVertical: 20,}}>
         <Text style={{fontSize: 21, fontWeight: "bold", color: Colors.titleColor}}>Perfect Shoes</Text>
         <Text style={{fontSize: 15.5, fontStyle: 'italic', color: Colors.titleColor}}>For perfect style</Text>
       </View>

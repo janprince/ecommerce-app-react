@@ -25,16 +25,16 @@ export default function Product({navigation}) {
               flexDirection: 'row',
               marginTop: 10,
           }}>
-              <View style={{flex: 1}}>
-              <Ionicons name="chevron-back" size={24} color="black" />
-              </View>
+              <TouchableOpacity style={{flex: 1}} onPress={() => {navigation.navigate("Home")}}>
+              <Ionicons name="chevron-back" size={24} color={Colors.titleColor} />
+              </TouchableOpacity>
 
               <View style={{flex: 1}}>
               <Text style={{color: Colors.titleColor, fontWeight:'bold'}}>Product Details</Text>
               </View>
 
               <View style={{flex: 1}}>
-                  <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end'}} />
+                  <FontAwesome5 name="bookmark" size={22} color={Colors.titleColor} style={{alignSelf: 'flex-end'}} />
               </View>
           </View>
 
@@ -99,18 +99,18 @@ export default function Product({navigation}) {
           </View>
 
           <View style={{flexDirection: 'row', marginVertical: 20}}>
-            <View style={styles.sizes}>
+            <TouchableOpacity style={styles.sizes}>
               <Text>40</Text>
-            </View>
-            <View style={styles.sizes}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.sizes}>
               <Text>41</Text>
-            </View>
-            <View style={styles.sizes}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.sizes}>
               <Text>42</Text>
-            </View>
-            <View style={styles.sizes}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.sizes}>
               <Text>43</Text>
-            </View>
+            </TouchableOpacity>
           </View>
 
           <TouchableOpacity style={{
@@ -120,7 +120,7 @@ export default function Product({navigation}) {
             marginHorizontal: 25,
             marginVertical: 20,
             borderRadius: 15
-            }}>
+            }} onPress={() => navigation.navigate("Cart")}>
             <Text style={{color: "#fff"}}>Add to Cart</Text>
           </TouchableOpacity>
 
