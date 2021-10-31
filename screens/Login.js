@@ -46,12 +46,12 @@ export default function Login({navigation}) {
 
         <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
           <Image source={require("../assets/icons/facebook.png")} style={{width: 20, height: 20, marginRight: 25}}/>
-          <Text>Continue with Google</Text>
+          <Text>Continue with Facebook</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
           <Image source={require("../assets/icons/apple-1.png")} style={{width: 20, height: 20, marginRight: 25}}/>
-          <Text>Continue with Google</Text>
+          <Text>Continue with Apple</Text>
         </TouchableOpacity>
 
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
