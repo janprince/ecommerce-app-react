@@ -7,6 +7,8 @@ import Home from './screens/Home';
 import SignUp from './screens/SignUp';
 import Product from './screens/Product';
 import Cart from './screens/Cart';
+import Checkout from './screens/Checkout';
+import Tabs from './navigation/Tabs';
 
 export default function App() {
     const stack = createNativeStackNavigator();
@@ -14,12 +16,15 @@ export default function App() {
         <View style={styles.container}>
             <NavigationContainer>
 
-                <stack.Navigator initialRouteName="Login">
+                <stack.Navigator initialRouteName="Main">
                     <stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
                     <stack.Screen name="Sign Up" component={SignUp} options={{headerShown: false}}/>
-                    <stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
                     <stack.Screen name="Product" component={Product} options={{headerShown: false}}/>
                     <stack.Screen name="Cart" component={Cart} options={{headerShown: false}}/>
+                    <stack.Screen name="Checkout" component={Checkout} options={{headerShown: false}}/>
+
+                    {/* Bottom Navigation */}
+                    <stack.Screen name="Main" component={Tabs} options={{headerShown: false}}/>
                 </stack.Navigator>
 
             </NavigationContainer>

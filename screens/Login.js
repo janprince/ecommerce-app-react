@@ -8,6 +8,8 @@ export default function Login({navigation}) {
   const login_images = [require("../assets/login/sneaker_2.jpg")];
   return (
     <SafeAreaView style={styles.container}>
+
+      {/* Logo */}
       <View style={{alignItems: 'center'}}>
         <Image source={require("../assets/icons/sneaker-icon.png")} style={{
           width: 65, 
@@ -39,17 +41,17 @@ export default function Login({navigation}) {
         </View>
 
         {/* login with google */}
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/google.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Continue with Google</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/facebook.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Continue with Facebook</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/apple-1.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Continue with Apple</Text>
         </TouchableOpacity>

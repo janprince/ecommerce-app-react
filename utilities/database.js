@@ -93,6 +93,54 @@ const Products =[
         require("../assets/product-images/puma/rs-fast/rs-fast(1).png"),
         require("../assets/product-images/puma/rs-fast/rs-fast(1).png")
     ]},
+
+    {name: "RS-FAST", price: "300", type: "Adidas", images:[
+        require("../assets/product-images/puma/rs-fast/rs-fast(1).png"),
+        require("../assets/product-images/puma/rs-fast/rs-fast(1).png"),
+        require("../assets/product-images/puma/rs-fast/rs-fast(1).png")
+    ]},
+
+    {name: "Free Metcon 4", price: "140", type: "New Balance", images:[
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png"),
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png"),
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png")
+    ]},
+
+    {name: "Jordan Delta 2 SP", price: "160", type: "Adidas", images:[
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png"),
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png"),
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png")
+    ]},
+
+    {name: "Air Monarch IV", price: "170", type: "New Balance", images:[
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png"),
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png"),
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png")
+    ]},
+
+    {name: "Air Max 270", price: "199", type: "Adidas", images:[
+        require("../assets/product-images/nike/air-max-270/air-max-270(1).png"),
+        require("../assets/product-images/nike/air-max-270/air-max-270(1).png"),
+        require("../assets/product-images/nike/air-max-270/air-max-270(1).png")
+    ]},
+
+    {name: "Free Metcon 4", price: "140", type: "Adidas", images:[
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png"),
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png"),
+        require("../assets/product-images/nike/free-metcon-4/free-metcon-4(1).png")
+    ]},
+
+    {name: "Jordan Delta 2 SP", price: "160", type: "New Balance", images:[
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png"),
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png"),
+        require("../assets/product-images/nike/jordan-delta-2-sp/jordan-delta-2-sp(1).png")
+    ]},
+
+    {name: "Air Monarch IV", price: "170", type: "Adidas", images:[
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png"),
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png"),
+        require("../assets/product-images/nike/air-monarch-iv/air-monarch-iv(1).png")
+    ]},
     
 ]
 

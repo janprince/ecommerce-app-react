@@ -38,9 +38,10 @@ export default function Cart({navigation}) {
         </View>
       </View>
 
+      {/* cart items*/}
       <View style={{marginTop: 20}}>
 
-        {/* cart - product card */}
+        
         <View style={{flexDirection: 'row', backgroundColor: '#fff', padding: 15, borderRadius: 15, marginVertical:7}}>
           <View style={{backgroundColor: Colors.background, padding: 15, borderRadius: 15, marginRight: 10}}>
             <Image source={require("../assets/product-images/test/pd-4.png")} style={{width: 80, height: 50}}/>
@@ -103,7 +104,32 @@ export default function Cart({navigation}) {
 
         </View>
 
+      </View>
 
+      
+      <View style={{marginTop: 50}}>
+
+        {/* Total amount */}
+        <View style={{flexDirection: 'row', }}>
+          <Text style={{fontSize: 17, fontWeight: 'bold', color: Colors.titleColor, flex: 1}}>Total</Text>
+          <View>
+            <Text style={{fontSize: 17, fontWeight: 'bold', color: Colors.titleColor, flex: 1,}}>
+              $385<Text style={{fontSize: 15, fontWeight: 'bold', color: Colors.titleColor, flex: 1,}}>.00</Text>
+            </Text>
+          </View>
+        </View>
+
+        {/* Checkout button */}
+        <TouchableOpacity style={{
+            backgroundColor: Colors.primary, 
+            alignItems: 'center',
+            paddingVertical: 20,
+            marginHorizontal: 0,
+            marginVertical: 20,
+            borderRadius: 15
+            }} onPress={() => navigation.navigate("Checkout")}>
+            <Text style={{color: "#fff"}}>Checkout</Text>
+          </TouchableOpacity>
       </View>
 
 

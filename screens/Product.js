@@ -84,6 +84,7 @@ export default function Product({navigation}) {
           </Text>
         </View>
 
+        {/* Product Sizes */}
         <View style={{marginTop: 20}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Text style={{color: Colors.titleColor, fontWeight:'bold', fontSize: 18, flex: 1}}>Size</Text>
@@ -98,7 +99,8 @@ export default function Product({navigation}) {
 
           </View>
 
-          <View style={{flexDirection: 'row', marginVertical: 20}}>
+        
+          <View style={{flexDirection: 'row'}}>
             <TouchableOpacity style={styles.sizes}>
               <Text>40</Text>
             </TouchableOpacity>
@@ -113,24 +115,24 @@ export default function Product({navigation}) {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={{
-            backgroundColor: Colors.primary, 
-            alignItems: 'center',
-            paddingVertical: 15,
-            marginHorizontal: 25,
-            marginVertical: 20,
-            borderRadius: 15
-            }} onPress={() => navigation.navigate("Cart")}>
-            <Text style={{color: "#fff"}}>Add to Cart</Text>
-          </TouchableOpacity>
-
         </View>
-
 
       </View>
 
+      {/* Add to Cart button */}
+      <View style={{justifyContent: 'flex-end', backgroundColor: "#fff", }}>
+        <TouchableOpacity style={{
+          backgroundColor: Colors.primary, 
+          alignItems: 'center',
+          paddingVertical: 15,
+          marginHorizontal: 25,
+          marginVertical: 20,
+          borderRadius: 15
+          }} onPress={() => navigation.navigate("Cart")}>
+          <Text style={{color: "#fff"}}>Add to Cart</Text>
+        </TouchableOpacity>
+      </View>
       
-
     </SafeAreaView>
   );
 }
