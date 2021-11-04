@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image, Alert } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, Feather, FontAwesome5, MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import Colors from "../utilities/Colors";
@@ -101,7 +101,7 @@ export default function Checkout({navigation}) {
           marginVertical: 20,
           borderRadius: 15,
           flexDirection: 'row'
-          }} onPress={() => navigation.navigate("")}>
+          }} onPress={() => Alert.alert("", "Payment Processed.\n Thank you.")}>
             <Entypo name="lock" size={24} color="white" />
           <Text style={{color: "#fff", marginLeft: 10, fontWeight: 'bold'}}>Make Payment</Text>
         </TouchableOpacity>

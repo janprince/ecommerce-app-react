@@ -138,7 +138,7 @@ const ProductList = ({
       }
     </View>
 
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom: 20}}>
       <View style={{
           flex: 1,
           flexDirection: 'row',
@@ -148,10 +148,10 @@ const ProductList = ({
         }}>
         
         {
-          products.map(product => {
+          products.map((product, index) => {
             if (product.type == selectedBrand){
               return(
-                <TouchableOpacity key={product.name} style={styles.product} onPress={() => {navigation.navigate('Product')}} >
+                <TouchableOpacity key={product.name} style={styles.product} onPress={() => {navigation.navigate('Product', {index: index})}} >
                   <FontAwesome5 name="bookmark" size={22} color="black" style={{alignSelf: 'flex-end', color: Colors.textSecondary, marginRight: 15, marginTop: 8}} />
                   <Image source={product.images[0]} style={{width: 160, height: 85, marginBottom: 15}}/>
                   <View style={{paddingLeft: 10}}>

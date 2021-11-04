@@ -4,16 +4,16 @@ import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, Feather, FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import Colors from "../utilities/Colors";
+import Products from '../utilities/database';
 
 
 
-export default function Product({navigation}) {
+export default function Product({route, navigation}) {
   const [currentShot, selectShot] = useState(0);   // state to handle which brand's shoes are diplayed
-  const pd_shots = [
-    require("../assets/product-images/test/pd-1.png"),
-    require("../assets/product-images/test/pd-2.png"),
-    require("../assets/product-images/test/pd-5.png"),
-  ]
+  const {index} = route.params;
+  const product_item = Products[index]
+  const product_name = product_item.name;
+  const pd_shots = product_item.images
 
   return (
     <SafeAreaView style={{marginTop: 15, flex: 1, backgroundColor: Colors.background}}>
@@ -42,7 +42,7 @@ export default function Product({navigation}) {
 
           <View style={{marginTop: 30,}}>
               <Text style={{fontSize: 15.5, color: Colors.textPrimary}}>Men's Shoe</Text>
-              <Text style={{fontSize: 21, fontWeight: 'bold', color: Colors.titleColor, marginTop: 5}}>Nike Air Jordan X</Text>
+              <Text style={{fontSize: 21, fontWeight: 'bold', color: Colors.titleColor, marginTop: 5}}>{product_name}</Text>
               <View style={{flexDirection: 'row', marginTop: 5, alignItems: 'center'}}>
                   <Ionicons name="star" size={20} color={Colors.primary} />
                   <Text> 4.9 </Text>
@@ -178,7 +178,7 @@ const ProductShots = ({
           {
               shots.map((shot, index) => {
                   return(
-                    <TouchableOpacity style={[styles.product_shots, selectedShot == index && styles.selected_shot]} key={shot} onPress={() => selectShot(index)}>
+                    <TouchableOpacity style={[styles.product_shots, selectedShot == index && styles.selected_shot]} key={index} onPress={() => selectShot(index)}>
                         <Image source={shot} style={{width: 40, height: 23}}/>
                     </TouchableOpacity>
                   );

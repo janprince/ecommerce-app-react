@@ -56,17 +56,17 @@ export default function SignUp({navigation}) {
         </View>
 
         {/* login with google */}
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/google.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Sign Up with Google</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/facebook.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Sign Up with Google</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Home");}}>
+        <TouchableOpacity style={styles.social_buttons} onPress={() => {navigation.navigate("Main");}}>
           <Image source={require("../assets/icons/apple-1.png")} style={{width: 20, height: 20, marginRight: 25}}/>
           <Text>Sign Up with Google</Text>
         </TouchableOpacity>
