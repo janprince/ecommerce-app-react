@@ -1,5 +1,5 @@
 
-// Simulates a database
+// Simulates a database of products.
 
 const Products =[
     // Nike

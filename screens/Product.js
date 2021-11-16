@@ -1,15 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image, Modal } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, Feather, FontAwesome5, FontAwesome } from '@expo/vector-icons';
 import Colors from "../utilities/Colors";
 import Products from '../utilities/database';
+import cartItems from './CartItems';
 
 
 
 export default function Product({route, navigation}) {
+  const [modalVisibility, changeModalVisibility] = useState(false); // state to handle modal visibility
   const [currentShot, selectShot] = useState(0);   // state to handle which brand's shoes are diplayed
+
+  // data from home screen
   const {index} = route.params;
   const product_item = Products[index]
   const product_name = product_item.name;
@@ -17,6 +21,23 @@ export default function Product({route, navigation}) {
 
   return (
     <SafeAreaView style={{marginTop: 15, flex: 1, backgroundColor: Colors.background}}>
+      
+      {/* A modal */}
+      <Modal animationType={"fade"} transparent={false} visible={modalVisibility}>
+        {/* Modal content */}
+        <View style={styles.modal}>
+          <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>Item added to Cart successfully.</Text>
+          <View style={{flexDirection: 'row', marginTop: 20}}>
+            <TouchableOpacity style={{flexDirection: 'row', padding: 10, backgroundColor: Colors.primary, marginRight: 10}} onPress={() => {navigation.navigate("Cart")}}>
+              <Text style={{color: '#fff'}}>Go to Cart</Text>
+              <Ionicons name="cart" size={24} color="#fff" style={{marginLeft: 10}}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={{flexDirection: 'row', padding: 10, backgroundColor: Colors.primary}} onPress={() => {navigation.navigate("Home")}}>
+              <Text style={{color: '#fff'}}>Continue Shopping</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
 
       <View style={styles.container}>
 
@@ -86,7 +107,7 @@ export default function Product({route, navigation}) {
 
         {/* Product Sizes */}
         <View style={{marginTop: 20}}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center', marginBottom: 10}}>
             <Text style={{color: Colors.titleColor, fontWeight:'bold', fontSize: 18, flex: 1}}>Size</Text>
             
             <View style={{flex: 1, }}>
@@ -128,7 +149,7 @@ export default function Product({route, navigation}) {
           marginHorizontal: 25,
           marginVertical: 20,
           borderRadius: 15
-          }} onPress={() => navigation.navigate("Cart")}>
+          }} onPress={() => {cartItems.push(product_item), changeModalVisibility(true)}}>
           <Text style={{color: "#fff"}}>Add to Cart</Text>
         </TouchableOpacity>
       </View>
@@ -161,6 +182,19 @@ const styles = StyleSheet.create({
     borderRadius: 15, 
     marginRight: 15, 
     borderColor: Colors.textPrimary
+  },
+  modal: {
+    justifyContent: 'center',  
+    alignItems: 'center',   
+    backgroundColor : Colors.titleColor,   
+    height: 300 ,  
+    width: '80%',  
+    borderRadius:10,  
+    borderWidth: 1,  
+    borderColor: '#fff',   
+    position: 'absolute',
+    top: 250,
+    left: 40,  
   }
 });
 

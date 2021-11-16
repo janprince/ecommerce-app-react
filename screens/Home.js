@@ -4,19 +4,12 @@ import { Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, Feather, FontAwesome5 } from '@expo/vector-icons';
 import Colors from "../utilities/Colors";
-import Products from '../utilities/database';
+import Products from '../utilities/database'; 
 
 
 
 export default function Home({navigation}) {
   const [brand, setBrand] = useState("Nike");   // state to handle which brand's shoes are diplayed
-  const pds = [
-    require("../assets/product-images/test/pd-1.png"),
-    require("../assets/product-images/test/pd-2.png"),
-    require("../assets/product-images/test/pd-3.png"),
-    require("../assets/product-images/test/pd-4.png"),
-    require("../assets/product-images/test/pd-5.png"),
-  ]
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,9 +19,9 @@ export default function Home({navigation}) {
         flexDirection: 'row',
         marginTop: 10,
       }}>
-        <View style={{flex: 1}}>
+        <TouchableOpacity style={{flex: 1}} onPress={() => navigation.navigate("Profile")}>
           <Ionicons name="options" size={24} color={Colors.titleColor} />
-        </View>
+        </TouchableOpacity>
         <TouchableOpacity style={{flex: 1}} onPress={() => navigation.navigate("Cart")}>
           <Ionicons name="cart" size={24} color={Colors.titleColor} style={{alignSelf: 'flex-end'}}/>
         </TouchableOpacity>
